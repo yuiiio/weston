@@ -197,7 +197,7 @@ paint_node_update_early(struct weston_paint_node *pnode)
 		weston_view_buffer_to_output_matrix(pnode->view,
 						    pnode->output, mat);
 		weston_matrix_invert(&pnode->output_to_buffer_matrix, mat);
-		pnode->needs_filtering = weston_matrix_needs_filtering(mat);
+		pnode->needs_filtering = false;//weston_matrix_needs_filtering(mat);
 
 		pnode->valid_transform = weston_matrix_to_transform(mat,
 								    &pnode->transform);
